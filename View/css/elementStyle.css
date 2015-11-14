@@ -1,0 +1,116 @@
+/* 
+    Created on : 22-oct-2015, 21:31:50
+    Author     : Coconut
+*/
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 850px;
+}
+
+.list-content{
+    padding:20px;
+}
+
+.section-title{
+    margin: 10px;
+    font-family:sans-serif;
+}
+
+.form{
+    margin: 15px;
+    font-family:sans-serif;
+}
+
+button, input {
+    width: 100px;
+    margin-top: 5px;
+}
+
+button{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+select {
+    width: 160px;
+    margin: 5px;
+}
+
+.manage-form{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.manage-form>input[type=radio]{
+    text-align: left;
+    width: 25px;
+}
+
+.secureDelete{
+    width: 350px;
+    height: 220px;
+    position:relative;
+    top: -450px;
+    margin-left: auto;
+    margin-right:auto;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 3px 5px #737373!important;
+    z-index: 8;
+}
+
+.tablaDelete{
+    min-width: 350px;
+    position: relative;
+    top: 40px;
+}
+
+
+.secureDelete>button{
+    position: relative;
+    margin: 15px;
+    top: 30px
+}
+
+.title{
+    position: relative;
+    top: 30px;
+    font-family:sans-serif;
+}
+
+.acceso{
+    min-width: 130px;
+}
+
+.icono{
+    margin-right: 4px;
+}
+
+.sesion{
+    position: relative;
+    width: 100px;
+    top: -70px;
+    left: 10px;
+}
+
+.usuarios{
+    width: 600px;
+    position: relative;
+    top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+div.introUsuario{
+    width: 900px;
+    position: absolute;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px;
+    text-align: center;
+}
