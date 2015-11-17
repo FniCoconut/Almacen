@@ -19,12 +19,20 @@
 
     $user = $_SESSION['USER'];
     ?>
+    
+    <script>
+        var permPHP = "<?php echo $user->getPermiso(); ?>";
+        permPHP = parseInt(permPHP);
+        window.onload = function(){
+            permiso(permPHP);
+        }
+    </script>
   </head>
-  
-   <body>
+   <!-- onload="permiso(<?php // echo $user->getPermiso(); ?>)" -->
+  <body>
     <header class="head-style"><img src="img/logo-almacen.png" alt="Logo" />
       <span class="head-title">Almacén</span>
-      <div class="sesion"><?php echo $user->getIdUsuario() ?> <br> <i class="fa fa-power-off icono"></i></div>
+      <div class="sesion"><?php echo $user->getIdUsuario() ?> <br> <i class="fa fa-power-off icono" onclick="window.location.href='../Controller/controlSession.php'"></i></div>
     </header>
     <div class="principal-content">
         <div class="introUsuario" id="infoUsuario">
@@ -34,8 +42,8 @@
     <!--  SECCION ESTANTERIA --- SECCION ESTANTERIA  --> 
         <span class="hidden-span" id="estanteria">estanteria</span>
         <div class="tab">
-            <a id="shelves-title" href="#estanteria" onclick="basicElements()"><span class="tab-link"><i class="fa fa-th icono"></i>Crear Estantería</span></a>
-            <div class="panel p-shelve">
+            <a href="#estanteria" onclick="basicElements()"><span id="shelves-title" class="tab-link"><i class="fa fa-th icono"></i>Crear Estantería</span></a>
+            <div class="panel" id="p-shelve">
                 <span class="section-title">Nueva estantería</span><br>
                 <form action="../Controller/makeShelves.php" name="shelve" id="insert-shelves" class="form" method="post">
                     <label for="lejas">Nº de lejas</label>

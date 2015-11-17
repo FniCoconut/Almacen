@@ -59,8 +59,6 @@ and open the template in the editor.
                 <!--<button onclick="secureReturnBox(typeBoxReturned.value, idBoxReturned.value, reubCaja.value, reubLejaCaja.value)">¡Reubicar!</button>-->
             </form>
             
-              
-            <a href="principal.php#almacen"><button class="btn-gestion">Volver a Gestion</button></a> <a href="principal.php"><button class="btn-gestion" >Volver al Inicio</button></a>
-          </div>
+           <button class="btn-gestion" onclick="window.location.href='principal.php#almacen'">Volver a Gestion</button> <button class="btn-gestion" onclick="window.location.href='principal.php'">Volver al Inicio</button></div>
     </body>
 </html>

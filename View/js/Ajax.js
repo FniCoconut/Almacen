@@ -359,41 +359,52 @@ function responseReturnBox(){
 //        setTimeout(function(){noDelete();}, 5000);
 //    }
 }
-//
-//function login(user, pass){
-//    Ajax();
-//    alert(user+'--'+pass);
-//    objAJAX.open('POST', 'http://localhost/Almacen/Controller/controlUsers.php?user='+user+'&pass='+pass, true);
-//    objAJAX.onreadystatechange = permiso;
-//    objAJAX.send();
-//}
-//
-//function permiso(){
+
+function login(){
+    
+    user = nomUsuario.value;
+    pass = contrasena.value;
+    
+    Ajax();
+    objAJAX.open('POST', 'http://localhost/Almacen/Controller/controlUsers.php?user='+user+'&pass='+pass, true);
+    objAJAX.send();
+    objAJAX.onreadystatechange = permiso;
+    return false;
+    /*
+     * devolver "falso" permite cargar todos los datos
+     * tras ejecutar todas las funciones oportunas sin que se 
+     * recargue el formulario automáticamente, pues
+     * es su naturaleza, recargarse una vez haces click en un boton.
+     * 
+     * @returns {false}
+     */
+}
+
+function permiso(permisos){
 //    if(objAJAX.readyState === 4 && objAJAX.status === 200){
 //        var user = JSON.parse(objAJAX.responseText);
-//        alert(user.USUARIO);
 //        usuario = user.USUARIO;
-//        permisos = user.PERMISO;
-//        
-//        switch(permisos){
-//            case 0:
-//                document.getElementById("shelves-title").disabled=true;
-//                document.getElementById("delBoxGest").disabled=true;
-//                document.getElementById("retBoxGest").disabled=true;
-//                window.location="http://localhost/Almacen/View/Principal.php";
-//                break;
-//                
-//            case 1:
-//                document.getElementById("shelves-title").disabled=true;
-//                window.location="http://localhost/Almacen/View/Principal.php";
-//                break;
-//                
-//            default:
-//                window.location="http://localhost/Almacen/View/Principal.php";
-//                break;
-//        }
-//        
-//    }
+//        permisos = user.PERMISO;insert-shelves
+        switch(permisos){
+            case 0:
+                document.getElementById("shelves-title").disabled=true;
+                document.getElementById("estanteria").disabled=true;
+                document.getElementById("p-shelve").style.visibility = "hidden";
+                document.getElementById("delBoxGest").disabled=true;
+                document.getElementById("retBoxGest").disabled=true;
+                break;
+                
+            case 1:
+                document.getElementById("shelves-title").disabled=true;
+                document.getElementById("estanteria").disabled=true;
+                document.getElementById("p-shelve").style.visibility = "hidden";
+                document.getElementById("p-shelve").disabled=true;
+                break;
+                
+            default:
+                break;
+        }
+    }
 //    else{
 //        alert(objAJAX.readyState+'--'+objAJAX.status);
 ////        window.location="http://localhost/Almacen/index.php";

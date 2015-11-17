@@ -65,7 +65,7 @@ and open the template in the editor.
             <?php    
             }
             ?>
-              <button class="btn-gestion"><a href="principal.php#almacen">Volver a Gestion</a></button> <button class="btn-gestion" ><a href="principal.php">Volver al Inicio</a></button>
+          <button class="btn-gestion" onclick="window.location.href='principal.php#almacen'">Volver a Gestion</button> <button class="btn-gestion" onclick="window.location.href='principal.php'">Volver al Inicio</button>    
           </div>
     </body>
 </html>

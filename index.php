@@ -15,15 +15,15 @@ and open the template in the editor.
         <script src="View/js/indexFunction.js"></script>
         <?php 
             if(session_start()){
-            session_destroy();} ?>
+                session_destroy();} ?>
     </head>
     <body>
             <header class="head-style"><img src="View/img/logo-almacen.png" alt="Logo" />
       <span class="head-title">Almacén</span>
     </header>
         <div class="principal-content">
-
-            <form action="Controller/controlUsers.php" id="EntradaUsuarios" class="usuarios">
+<!--  onsubmit="return login()" -->
+            <form id="EntradaUsuarios" action="Controller/controlUsers.php" class="usuarios" post="post">
                 <label for="nomUsuario"><i class="fa fa-user icono"></i>Usuario</label>
                 <br>
                 <input type="text" placeholder="Nombre de usuario" class="acceso" id="nomUsuario" name="user">

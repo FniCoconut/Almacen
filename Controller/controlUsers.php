@@ -17,7 +17,7 @@ $pass = $_REQUEST['pass'];
 $_SESSION['USER'] = OperationUser::autentication($user);
 $validUser = $_SESSION['USER'];
 
-print_r($validUser);
+//print_r($validUser);
 
 if ($validUser == "Usuario incorrecto"){
     header('Location: ../index.php');
@@ -27,8 +27,8 @@ else{
     $iUser = sha1(md5($pass, $validUser->getSalt()));
     
     if( $ubbdd == $iUser){
-//        $gestionUsuario[USUARIO] = $validUser->getIdUsuario();
-//        $gestionUsuario[PERMISO] = $validUser->getPermiso();
+//        $gestionUsuario['USUARIO'] = $validUser->getIdUsuario();
+//        $gestionUsuario['PERMISO'] = $validUser->getPermiso();
 //    
 //        print_r(json_encode($gestionUsuario));
         header('Location: ../View/Principal.php');

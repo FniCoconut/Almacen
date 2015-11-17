@@ -32,6 +32,14 @@ class OperationUser {
         return $validUser;
     }
     
-    
+//    public static function changePass($usuario, $newPass){
+//        global $conection;
+//        
+//        
+//        
+//        $result = $conection->query("");
+//        
+//        
+//    }
     
 }
