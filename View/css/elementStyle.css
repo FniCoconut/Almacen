@@ -114,3 +114,15 @@ div.introUsuario{
     margin-top: 200px;
     text-align: center;
 }
+
+div #miniMenu{
+    cursor: pointer;
+    position:relative;
+    margin-left: 90px;
+    top: -40px;
+    box-shadow: 0px 3px 5px #e6e6e6;
+    background-color: gainsboro;
+    color: gray;
+    /*visibility: hidden;*/
+    width: 250px;
+}

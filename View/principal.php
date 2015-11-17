@@ -32,7 +32,7 @@
   <body>
     <header class="head-style"><img src="img/logo-almacen.png" alt="Logo" />
       <span class="head-title">Almacén</span>
-      <div class="sesion"><?php echo $user->getIdUsuario() ?> <br> <i class="fa fa-power-off icono" onclick="window.location.href='../Controller/controlSession.php'"></i></div>
+      <div class="sesion" id="miniUsuario"><?php echo $user->getIdUsuario() ?> <br> <i class="fa fa-bars icono" onclick="menuUsuario();"></i></div>
     </header>
     <div class="principal-content">
         <div class="introUsuario" id="infoUsuario">

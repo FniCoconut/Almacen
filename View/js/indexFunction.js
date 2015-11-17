@@ -103,3 +103,37 @@ function noDelete(){
     document.body.removeChild(document.getElementById("secureDeleteDiv"));
     location.reload(true);
 }
+
+function menuUsuario(){
+    
+    miniUsuario = document.getElementById("miniUsuario");
+    div = document.createElement("div");
+    div.setAttribute('id', 'miniMenu');
+    
+        lista = document.createElement('ul');
+            elemLista = document.createElement('li');
+            elemLista.setAttribute("onclick", "window.location.href='../Controller/controlSession.php'");
+            elemLista.appendChild(document.createTextNode('Cerrar Sesion'));
+        lista.appendChild(elemLista);
+            elemUser = document.createElement('li');
+            elemUser.setAttribute("onclick", "window.location.href='viewAdminUser.php'");
+            elemUser.appendChild(document.createTextNode('Cuenta Usuario'));
+        lista.appendChild(elemUser);
+        
+    div.appendChild(lista);
+    miniUsuario.appendChild(div);
+    
+}
+
+function validaPassword(repNueva){
+    nueva = document.getElementById('nueva').value;
+//    repNueva = document.getElementById('repNueva');
+    if(nueva !== repNueva){
+        document.getElementById('cambioPass').disabled = true;
+        document.getElementById('mensaje').innerHTML = 'Las contraseñas no coinciden.';
+    }else{
+        document.getElementById('cambioPass').disabled = false;
+        document.getElementById('mensaje').innerHTML = "";
+    }
+            
+}
