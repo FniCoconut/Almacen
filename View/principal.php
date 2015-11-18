@@ -33,7 +33,7 @@
   <body>
     <header class="head-style"><img src="img/logo-almacen.png" alt="Logo" />
       <span class="head-title">Almacén</span>
-      <div class="sesion" id="miniUsuario"><?php echo $user->getIdUsuario() ?> <br> <i class="fa fa-bars icono" onclick="menuUsuario();"></i></div>
+      <div class="sesion" id="miniUsuario"><?php echo $user->getIdUsuario() ?> <br> <i class="fa fa-bars fa-2x" onclick="menuUsuario();"></i></div>
     </header>
     <div class="principal-content">
         <div class="introUsuario" id="infoUsuario">

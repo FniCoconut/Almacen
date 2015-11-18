@@ -106,6 +106,10 @@ function noDelete(){
 
 function menuUsuario(){
     
+    if( document.getElementById('miniMenu') !== null){
+        document.getElementById('miniUsuario').removeChild(document.getElementById('miniMenu'));
+    }
+    
     miniUsuario = document.getElementById("miniUsuario");
     div = document.createElement("div");
     div.setAttribute('id', 'miniMenu');
@@ -136,5 +140,152 @@ function validaPassword(repNueva){
         document.getElementById('mensaje').innerHTML = "";
     }
             
+}
+
+function makeAdminFields(action){
+    container = document.getElementById('elementosAdminUsers');
+        
+        while( document.getElementById('elementosAdminUsers').hasChildNodes() ){
+            document.getElementById('elementosAdminUsers').removeChild(document.getElementById('elementosAdminUsers').firstChild);
+        }
+        
+        switch(action){
+            case 'eU'://al editar
+                
+                labelN = document.createElement('label');
+                labelN.appendChild(document.createTextNode('Nombre Usuario'));
+
+                nombreU = document.createElement('input');
+                nombreU.setAttribute('type', 'text');
+                nombreU.setAttribute('name', 'nombre');
+                nombreU.setAttribute('maxlength', '7');
+                nombreU.setAttribute('required', 'required');
+                
+                labelP = document.createElement('label');
+                labelP.appendChild(document.createTextNode('Nueva Contraseña'));
+                
+                newP = document.createElement('input');
+                newP.setAttribute('type', 'password');
+                newP.setAttribute('name', 'newPass');
+                newP.setAttribute('required', 'required');
+                
+                container.appendChild(labelN);
+                container.appendChild(nombreU);
+                container.appendChild(document.createElement('br'));
+                container.appendChild(labelP);
+                container.appendChild(newP);
+                
+                break;
+
+            case 'dU'://al elimiar
+                
+                labelN = document.createElement('label');
+                labelN.appendChild(document.createTextNode('Nombre Usuario'));
+
+                nombreU = document.createElement('input');
+                nombreU.setAttribute('type', 'text');
+                nombreU.setAttribute('name', 'nombre');
+                nombreU.setAttribute('maxlength', '7');
+                nombreU.setAttribute('required', 'required');
+                
+                labelR = document.createElement('label');
+                labelR.appendChild(document.createTextNode('Responsabilidad'));
+                
+                select = document.createElement('select');
+                select.setAttribute('name', 'rol');
+                    gern = document.createElement('option');
+                    gern.setAttribute('value', 'gern');
+                    gern.appendChild(document.createTextNode('Gerente'));
+                    
+                    empl = document.createElement('option');
+                    empl.setAttribute('value', 'empl');
+                    empl.appendChild(document.createTextNode('Empleado'));
+                    
+                select.appendChild(gern);
+                select.appendChild(empl);
+                
+                container.appendChild(labelN);
+                container.appendChild(nombreU);
+                container.appendChild(document.createElement('br'));
+                container.appendChild(labelR);
+                container.appendChild(select);
+                
+                break;
+
+            case 'aU'://al añadir
+                
+                labelN = document.createElement('label');
+                labelN.appendChild(document.createTextNode('Nombre Usuario'));
+
+                nombreU = document.createElement('input');
+                nombreU.setAttribute('type', 'text');
+                nombreU.setAttribute('name', 'nombre');
+                nombreU.setAttribute('maxlength', '7');
+                nombreU.setAttribute('required', 'required');
+                
+                labelP = document.createElement('label');
+                labelP.appendChild(document.createTextNode('Contraseña'));
+                
+                newP = document.createElement('input');
+                newP.setAttribute('type', 'password');
+                newP.setAttribute('name', 'newPass');
+                newP.setAttribute('required', 'required');
+                
+                labelR = document.createElement('label');
+                labelR.appendChild(document.createTextNode('Responsabilidad'));
+                
+                select = document.createElement('select');
+                select.setAttribute('name', 'rol');
+                    gern = document.createElement('option');
+                    gern.setAttribute('value', 'gern');
+                    gern.appendChild(document.createTextNode('Gerente'));
+                    
+                    empl = document.createElement('option');
+                    empl.setAttribute('value', 'empl');
+                    empl.appendChild(document.createTextNode('Empleado'));
+                    
+                select.appendChild(gern);
+                select.appendChild(empl);
+                
+                container.appendChild(labelN);
+                container.appendChild(nombreU);
+                container.appendChild(document.createElement('br'));
+                container.appendChild(labelP);
+                container.appendChild(newP);
+                container.appendChild(document.createElement('br'));
+                container.appendChild(labelR);
+                container.appendChild(select);
+                
+                break;
+                
+            case 'cP':
+            
+                labelP = document.createElement('label');
+                labelP.appendChild(document.createTextNode('Nueva contraseña'));
+                
+                newP = document.createElement('input');
+                newP.setAttribute('type', 'password');
+                newP.setAttribute('name', 'newPass');
+                newP.setAttribute('required', 'required');
+                newP.setAttribute('id', 'nueva');
+                
+                container.appendChild(labelP);
+                container.appendChild(newP);
+                container.appendChild(document.createElement('br'));
+                
+                labelP = document.createElement('label');
+                labelP.appendChild(document.createTextNode('Repite nueva contraseña'));
+                
+                newP = document.createElement('input');
+                newP.setAttribute('type', 'password');
+                newP.setAttribute('name', 'repNewPass');
+                newP.setAttribute('required', 'required');
+                newP.setAttribute('id', 'repNueva');
+                newP.setAttribute('onblur', 'validaPassword()')
+                container.appendChild(labelP);
+                container.appendChild(newP);
+                break;
+        }
+    
 }
 

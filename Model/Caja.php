@@ -45,7 +45,7 @@ abstract class Caja {
     private $fecha_alta;
     
     //Constructor, solo uno, no admite sobrecarga.
-    function __construct($altura, $anchura, $profundidad, $_color, $date) {
+    function __construct($altura, $anchura, $profundidad, $_color, $_date) {
         
         $this->altura = $altura;
         $this->anchura = $anchura;
@@ -53,7 +53,8 @@ abstract class Caja {
         $this->color = $_color;
 //        $this->estanteria = $_estanteria;
 //        $this->leja = $_leja;
-        $this->fecha_alta = $date;
+        $date = new DateTime($_date);
+        $this->fecha_alta = date_format($date, 'd-m-Y');
     }
                 
     //Métodos.

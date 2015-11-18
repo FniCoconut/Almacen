@@ -97,6 +97,7 @@ select {
     width: 100px;
     top: -70px;
     left: 10px;
+    text-align: center;
 }
 
 .usuarios{

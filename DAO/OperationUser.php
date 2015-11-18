@@ -50,10 +50,13 @@ class OperationUser {
         global $conection;
         
         $id = $user->getIdUsuario();
+        $hash = $user->getAutenticacion();
+        $salt = $user->getSalt();
+        $perm = $user->getPermiso();
         
         $conection->beginTransaction();
         
-        $result = $conection->query("INSERT INTO dbalmacen2.usuarios VALUES( , , , );");
+        $result = $conection->query("INSERT INTO dbalmacen2.usuarios VALUES('$id', '$hash', '$salt', $perm);");
         if ( !$result ){
             $conection->rollback();
 //            return false;
@@ -75,7 +78,21 @@ class OperationUser {
         return $arrayUsers;
     }
     
-    
+    public static function delUser($id, $rol){
+        global $conection;
+        
+        $conection->beginTransaction();
+        
+        $result = $conection->query("DELETE FROM dbalmacen2.usuarios WHERE ID_USUARIO = '$id' AND SALT = '$rol';");
+        if ( !$result ){
+            $conection->rollback();
+//            return false;
+        }else{
+            $conection->commit();
+//            return true;
+        }        
+        
+    }
     
     
 }
