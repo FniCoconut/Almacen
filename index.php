@@ -11,11 +11,13 @@ and open the template in the editor.
         <link rel="stylesheet" href="View/css/styleG.css" type="text/css" />
         <link rel="stylesheet" href="View/css/elementStyle.css" type="text/css" />
         <link rel="stylesheet" href="View/font-awesome-4.4.0/css/font-awesome.min.css" type="text/css" />
+        <link rel="shortcut icon" href="View/img/favicon.ico">
         <script src="View/js/Ajax.js"></script>
         <script src="View/js/indexFunction.js"></script>
         <?php 
             if(session_start()){
-                session_destroy();} ?>
+                session_destroy();} 
+                ?>
     </head>
     <body>
             <header class="head-style"><img src="View/img/logo-almacen.png" alt="Logo" />
@@ -34,6 +36,7 @@ and open the template in the editor.
                 <br><br>
                 <button class="acceso">¡Entrar al almacén! <i class="fa fa-sign-in"></i></button>
                 <!--<input type="submit" value="¡Entrar al almacén!" class="acceso" />-->
+            
             </form>
 
         </div>

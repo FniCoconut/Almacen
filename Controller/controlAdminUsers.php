@@ -1,22 +1,76 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 include_once '../Model/Usuario.php';
 
-    session_start();
+session_start();
+$userBDDD = $_SESSION['USER'];
 
-    $user = $_SESSION['USER'];
 
-    $user = $_REQUEST['usuario']; //usuario
-    $actualPass = $_REQUEST['actualPass'];//actualPass
-    $newPass = $_REQUEST['newPass'];//newPass
+if ( isset($_REQUEST['adminUsers']) ){
+$variable = $_REQUEST['adminUsers'];
+}else{
+    header('Location: ../View/principal.php');
+}
 
-//hash almacenado
+
+
+$introduced = $_REQUEST['actualPass'];
+
+
+
+
+
+if( isset($_REQUEST['repNewPass']) ){
     
-//hash actualPass
+}
+
+if( isset($_REQUEST['newPass']) ){
     
-//hash newPass
+}
+
+if( isset($_REQUEST['rol']) ){
+    
+}
+
+if( isset($_REQUEST['nombre']) ){
+    
+}
+
+
+switch ($variable) {
+    case 'editUser':
+        
+        
+        break;
+
+    case 'deleteUser':
+        
+        
+        break;
+    
+    case 'addUser':
+        
+        
+        break;
+    
+    case 'changePass':
+        
+        
+        break;
+    default:
+        break;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

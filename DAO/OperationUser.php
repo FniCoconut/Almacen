@@ -13,7 +13,7 @@
  */
 
 include 'conexBBDD.php';
-include '../Model/Usuario.php';
+include_once '../Model/Usuario.php';
 
 class OperationUser {
     
@@ -32,14 +32,50 @@ class OperationUser {
         return $validUser;
     }
     
-//    public static function changePass($usuario, $newPass){
-//        global $conection;
-//        
-//        
-//        
-//        $result = $conection->query("");
-//        
-//        
-//    }
+    public static function editUser($user, $newPass){
+        global $conection;
+        $conection->beginTransaction();
+        
+        $result = $conection->query("UPDATE dbalmacen2.usuarios SET AUTENTICACION='$newPass' WHERE ID_USUARIO='$user';");
+        if ( !$result ){
+            $conection->rollback();
+//            return false;
+        }else{
+            $conection->commit();
+//            return true;
+        }
+    }
+    
+    public static function addUser($user){
+        global $conection;
+        
+        $id = $user->getIdUsuario();
+        
+        $conection->beginTransaction();
+        
+        $result = $conection->query("INSERT INTO dbalmacen2.usuarios VALUES( , , , );");
+        if ( !$result ){
+            $conection->rollback();
+//            return false;
+        }else{
+            $conection->commit();
+//            return true;
+        }
+    }
+    
+    public static function getUsers(){
+        global $conection;
+        $arrayUsers = array();
+        $result = $conection->query("");
+        if($result != false){
+            while( $user = $result->fetch() ){
+                $arrayUsers[] = new Usuario($user['ID_USUARIO'], $user['AUTENTICACION'], $user['SALT'], $user['PERMISO']);
+            }
+        }
+        return $arrayUsers;
+    }
+    
+    
+    
     
 }

@@ -9,6 +9,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/styleG.css" type="text/css" />
         <link rel="stylesheet" href="css/elementStyle.css" type="text/css" />
+        <link rel="shortcut icon" href="img/favicon.ico">
     <title></title>
         <?php
         include_once '../Model/CajaSorpresa.php';

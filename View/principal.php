@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styleG.css" type="text/css" />
     <link rel="stylesheet" href="css/styleTags.css" type="text/css" />
     <link rel="stylesheet" href="css/elementStyle.css" type="text/css" />
+    <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css" type="text/css" />
     <script src="js/Ajax.js"></script>
     <script src="js/indexFunction.js"></script>
