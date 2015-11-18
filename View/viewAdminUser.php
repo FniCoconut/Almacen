@@ -19,7 +19,8 @@
     </head>
     <body>
     <header class="head-style"><img src="../View/img/logo-almacen.png" alt="Logo" />
-        <div class="sesion"><i class="fa fa-arrow-left fa-3x" onclick="window.location.href='principal.php'"></i></div><span class="head-title">Almacén</span>
+        <span class="head-title">Almacén</span>
+        <div class="sesion"><i class="fa fa-arrow-left fa-3x" onclick="window.location.href='principal.php'"></i></div>
     </header>
         <div class="principal-content">
 <!--  onsubmit="return login()" -->

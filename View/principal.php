@@ -43,12 +43,12 @@
     <!--  SECCION ESTANTERIA --- SECCION ESTANTERIA  --> 
         <span class="hidden-span" id="estanteria">estanteria</span>
         <div class="tab">
-            <a href="#estanteria" onclick="basicElements()"><span id="shelves-title" class="tab-link"><i class="fa fa-th icono"></i>Crear Estantería</span></a>
+            <a href="#estanteria" ><span id="shelves-title" class="tab-link"><i class="fa fa-th icono"></i>Crear Estantería</span></a>
             <div class="panel" id="p-shelve">
                 <span class="section-title">Nueva estantería</span><br>
                 <form action="../Controller/makeShelves.php" name="shelve" id="insert-shelves" class="form" method="post">
                     <label for="lejas">Nº de lejas</label>
-                    <input type="number" name="lejas" id="n-lejas" min="2" max="10" required>
+                    <input type="number" name="lejas" id="n-lejas" min="2" max="10" required onclick="basicElements()">
                     <br>
                     <label for="material">Material de estantería</label>
                     <select name="material" id="material" required></select>

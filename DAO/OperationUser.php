@@ -36,7 +36,7 @@ class OperationUser {
         global $conection;
         $conection->beginTransaction();
         
-        $result = $conection->query("UPDATE dbalmacen2.usuarios SET AUTENTICACION='$newPass' WHERE ID_USUARIO='$user';");
+        $result = $conection->query("UPDATE usuarios SET AUTENTICACION='$newPass' WHERE ID_USUARIO='$user';");
         if ( !$result ){
             $conection->rollback();
 //            return false;
@@ -56,7 +56,7 @@ class OperationUser {
         
         $conection->beginTransaction();
         
-        $result = $conection->query("INSERT INTO dbalmacen2.usuarios VALUES('$id', '$hash', '$salt', $perm);");
+        $result = $conection->query("INSERT INTO usuarios VALUES('$id', '$hash', '$salt', $perm);");
         if ( !$result ){
             $conection->rollback();
 //            return false;
@@ -66,16 +66,15 @@ class OperationUser {
         }
     }
     
-    public static function getUsers(){
+    public static function getUsers($id){
         global $conection;
-        $arrayUsers = array();
-        $result = $conection->query("");
+        $result = $conection->query("SELECT * FROM bdalmacen2.usuarios WHERE ID_USUARIO = '$id';");
         if($result != false){
             while( $user = $result->fetch() ){
-                $arrayUsers[] = new Usuario($user['ID_USUARIO'], $user['AUTENTICACION'], $user['SALT'], $user['PERMISO']);
+                $User = new Usuario($user['ID_USUARIO'], $user['AUTENTICACION'], $user['SALT'], $user['PERMISO']);
             }
+        return $User;
         }
-        return $arrayUsers;
     }
     
     public static function delUser($id, $rol){
@@ -83,7 +82,7 @@ class OperationUser {
         
         $conection->beginTransaction();
         
-        $result = $conection->query("DELETE FROM dbalmacen2.usuarios WHERE ID_USUARIO = '$id' AND SALT = '$rol';");
+        $result = $conection->query("DELETE FROM usuarios WHERE ID_USUARIO = '$id' AND SALT = '$rol';");
         if ( !$result ){
             $conection->rollback();
 //            return false;

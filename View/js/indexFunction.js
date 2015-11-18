@@ -260,6 +260,11 @@ function makeAdminFields(action){
                 
             case 'cP':
             
+                nombreU = document.createElement('input');
+                nombreU.setAttribute('type', 'hidden');
+                nombreU.setAttribute('name', 'nombre');
+                nombreU.setAttribute('value', 'ALFA-01');
+            
                 labelP = document.createElement('label');
                 labelP.appendChild(document.createTextNode('Nueva contraseña'));
                 
@@ -269,6 +274,7 @@ function makeAdminFields(action){
                 newP.setAttribute('required', 'required');
                 newP.setAttribute('id', 'nueva');
                 
+                container.appendChild(nombreU);
                 container.appendChild(labelP);
                 container.appendChild(newP);
                 container.appendChild(document.createElement('br'));
@@ -281,7 +287,7 @@ function makeAdminFields(action){
                 newP.setAttribute('name', 'repNewPass');
                 newP.setAttribute('required', 'required');
                 newP.setAttribute('id', 'repNueva');
-                newP.setAttribute('onblur', 'validaPassword()')
+                newP.setAttribute('onblur', 'validaPassword(this.value)');
                 container.appendChild(labelP);
                 container.appendChild(newP);
                 break;
