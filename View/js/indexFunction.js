@@ -289,3 +289,24 @@ function makeAdminFields(action){
     
 }
 
+function permiso(permisos){
+    
+        switch(permisos){
+            case 0://eliminar input radio y div
+                estanteria = document.getElementsByClassName('tab')[0];
+                estanteria.removeChild(document.getElementById('p-shelve'));
+                while( document.getElementById('delret').hasChildNodes() ){
+                    document.getElementById('delret').removeChild(document.getElementById('delret').firstChild);
+                }
+                
+                break;
+                
+            case 1://eliminar div
+                estanteria = document.getElementsByClassName('tab')[0];
+                estanteria.removeChild(document.getElementById('p-shelve'));
+                break;
+                
+            default:
+                break;
+        }
+    }

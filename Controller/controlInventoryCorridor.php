@@ -35,5 +35,5 @@ foreach($allShelves as $shelve){
 $invenatrio = new Inventario(date('d-m-Y'), $shelveWithBoxes);
 
 $_SESSION['INVENTORY'] = $invenatrio;
-//print_r($_SESSION['INVENTORY']);
+
 header('Location: ../View/listInventory.php');

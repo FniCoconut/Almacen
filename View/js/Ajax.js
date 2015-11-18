@@ -380,28 +380,4 @@ function login(){
      */
 }
 
-function permiso(permisos){
-//    if(objAJAX.readyState === 4 && objAJAX.status === 200){
-//        var user = JSON.parse(objAJAX.responseText);
-//        usuario = user.USUARIO;
-//        permisos = user.PERMISO;insert-shelves
-        switch(permisos){
-            case 0://eliminar input radio y div
-                document.getElementById("shelves-title").disabled=true;
-                document.getElementById("estanteria").disabled=true;
-                document.getElementById("p-shelve").style.visibility = "hidden";
-                document.getElementById("delBoxGest").disabled=true;
-                document.getElementById("retBoxGest").disabled=true;
-                break;
-                
-            case 1://eliminar div
-                document.getElementById("shelves-title").disabled=true;
-                document.getElementById("estanteria").disabled=true;
-                document.getElementById("p-shelve").style.visibility = "hidden";
-                document.getElementById("p-shelve").disabled=true;
-                break;
-                
-            default:
-                break;
-        }
-    }
+

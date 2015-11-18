@@ -109,13 +109,15 @@
             <div class="panel p-admin">
                 <span id="manage-title" class="section-title">Gestión del almacen</span>
                 <br>
-                <form action="../Controller/dispatcherGestion.php" method="post" name="gestion" class="form manage-form">
+                <form action="../Controller/dispatcherGestion.php" method="post" name="gestion" class="form manage-form" id="mng-form">
                     <input type="radio" name="rGestion" value="listShelves"/><label for="rGestion">Listar estanterias.</label><br>
                     <input type="radio" name="rGestion" value="inventoryTypeBox" onclick="makeGestionBox()" /><label for="rGestion">Inventario de cajas por tipo.</label><!-- Aquí se genera un select con las options name ="typeBox"--><br>
                         <div id="box-type-list"></div>
                     <input type="radio" name="rGestion" value="inventoryCorridor"/><label for="rGestion">Inventario del almacén.</label><br>
-                    <input type="radio" name="rGestion" value="deleteBox" id="delBoxGest"/><label for="rGestion">Eliminar caja.</label><br>
-                    <input type="radio" name="rGestion" value="returnBox" id="retBoxGest"/><label for="rGestion">Devolucion caja.</label><br>
+                    <div id="delret">
+                        <input type="radio" name="rGestion" value="deleteBox" id="delBoxGest"/><label for="rGestion">Eliminar caja.</label><br>
+                        <input type="radio" name="rGestion" value="returnBox" id="retBoxGest"/><label for="rGestion">Devolucion caja.</label><br>
+                    </div>
                     <input type="submit" value="Siguiente" name="menuGestionSubmit">
                 </form>
             </div>
